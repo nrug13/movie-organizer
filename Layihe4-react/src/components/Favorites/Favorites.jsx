@@ -3,7 +3,7 @@ import './Favorites.css';
 import {useSelector,useDispatch} from 'react-redux'
 
 function Favorites() {
-    let {favourite}=useSelector(function(a){
+    let {favourite: list}=useSelector(function(a){
         return a;
     })
     let dispatch=useDispatch()
@@ -15,9 +15,9 @@ function Favorites() {
     }
     return (
         <div className="favorites">
-            Əlavə edilmiş elementlərin sayı : {favourite.length}
+            Əlavə edilmiş elementlərin sayı : {list.length}
              <ul className="favorites__list">
-                {favourite.map((item, index) => {
+                {list.map((item, index) => {
                     return <li className='list-item' key={index}>{item.Title} ({item.Year})
                         <button type="button" onClick={() =>ItemDeleteHandler(item.imdbID)} className="favorites__delete">x</button>
                     </li>
