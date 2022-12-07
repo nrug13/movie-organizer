@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './ListPage.css';
 
 class ListPage extends Component {
-    state = {
-        movies: [
-            { title: 'The Godfather', year: 1972, imdbID: 'tt0068646' }
-        ]
-    }
-    componentDidMount() {
-        // TODO: запрос к сервер на получение списка
-        // TODO: запросы к серверу по всем imdbID
-    }
+    // state = {
+    //     movies: [
+    //         { title: 'The Godfather', year: 1972, imdbID: 'tt0068646' }
+    //     ]
+    // }
+    // componentDidMount() {
+    //     // TODO: запрос к сервер на получение списка
+    //     // TODO: запросы к серверу по всем imdbID
+    // }
     render() { 
         return (
             <div className="list-page">

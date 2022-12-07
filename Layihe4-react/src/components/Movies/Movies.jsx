@@ -4,9 +4,7 @@ import './Movies.css';
 import {useSelector} from 'react-redux'
 function Movies() {
     let {data}=useSelector(
-        function(a){
-            return a;
-        }
+        (a)=>a
     )
     return (
         <ul className="movies">
@@ -19,5 +17,6 @@ function Movies() {
     );
 
 }
+
 
 export default Movies;

@@ -1,6 +1,7 @@
 const obj = {
     data: [],
     favourite: [],
+    tolist:[],
     inputVal: ''
 }
 function reducer(state = obj, action) {
@@ -30,8 +31,8 @@ function reducer(state = obj, action) {
                 }
 
             )
-            console.log(z);
-            if (z.length == 0) {
+           
+            if (!z.length) {
                 return state = {
                     ...state,
                     favourite: [...state.favourite, action.load]
@@ -40,6 +41,7 @@ function reducer(state = obj, action) {
             else {
                 return state
             }
+            
         case 'delete':
             let x = state.favourite.filter(
                 function (e) {
