@@ -13,6 +13,7 @@ function Favorites() {
             load:imdbID
         })
     }
+
     return (
         <div className="favorites">
             Əlavə edilmiş elementlərin sayı : {list.length}
@@ -23,6 +24,12 @@ function Favorites() {
                     </li>
                 })}
             </ul>
+           <label htmlFor="">
+           <input type="text" />
+            <button type='button' >Siyahı yarat</button>
+            <br />
+            <br />
+           </label>
 
         </div>
     );

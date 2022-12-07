@@ -3,7 +3,7 @@ import './SearchBox.css';
 import { useSelector,useDispatch } from 'react-redux'
 import mystore from '../../redux/store';
 function SearchBox() {
-    const {inputValue} = useSelector(
+    const {inputVal} = useSelector(
         function (state) {
             
             return state;
@@ -13,7 +13,7 @@ function SearchBox() {
     useEffect(
         function () {
             async function fetchData() {
-                let response = await fetch(`http://www.omdbapi.com/?s=joker&apikey=9ad2bb5d`);
+                let response = await fetch(`http://www.omdbapi.com/?s=mask&apikey=9ad2bb5d`);
                 let js=await response.json();
                 console.log(js)
                 if(js.Response=='True'){
@@ -22,12 +22,6 @@ function SearchBox() {
                         load:js.Search
                     })
                     
-                }
-                else if(js.Response=='False'){
-                    dispatch({
-                        type:'reset',
-                        
-                    })
                 }
             }
             fetchData()
@@ -46,7 +40,7 @@ function SearchBox() {
     let searchBoxSubmitHandler = (e) => {
         e.preventDefault();
         async function fetchData() {
-            let response = await fetch(`http://www.omdbapi.com/?s=${inputValue}&apikey=9ad2bb5d`);
+            let response = await fetch(`http://www.omdbapi.com/?s=${inputVal}&apikey=9ad2bb5d`);
             let js=await response.json();
             console.log(js)
             if(js.Response=='True'){
@@ -72,7 +66,7 @@ function SearchBox() {
                 <label className="search-box__form-label">
                     Искать фильм по названию:
                     <input
-                         value={inputValue}
+                         value={inputVal}
                         type="text"
                         className="search-box__form-input"
                         placeholder="Например, Shawshank Redemption"
@@ -82,7 +76,7 @@ function SearchBox() {
                 <button
                     type="submit"
                     className="search-box__form-submit"
-                 disabled={!inputValue}
+                 disabled={!inputVal}
                 >
                     Искать
                 </button>

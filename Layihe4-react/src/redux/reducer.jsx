@@ -1,29 +1,29 @@
 const obj = {
     data: [],
     favourite: [],
-    inputValue: ''
+    inputVal: ''
 }
 function reducer(state = obj, action) {
     switch (action.type) {
         case 'inputChange':
             return state = {
                 ...state,
-                inputValue: action.load
+                inputVal: action.load
             };
         case 'fetchData':
             return state = {
                 ...state,
                 data: action.load,
-                inputValue: ""
+                inputVal: ""
             }
             case 'reset':
                 return state={
                     ...state,
-                    inputValue:"",
+                    inputVal:"",
                     data:[]
                 }
 
-        case 'Fav':
+        case 'addtoList':
             let z = state.favourite.filter(
                 function (y) {
                     return y.imdbID == action.load.imdbID
@@ -52,6 +52,7 @@ function reducer(state = obj, action) {
                 favourite: x
 
             }
+
         default:
             return state;
     }

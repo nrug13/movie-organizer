@@ -10,7 +10,7 @@ function  MovieItem ({Title, Year, Poster,imdbID}){
         function addFavoriteListAddHanlder(){
 
             dispatch({
-                type:'Fav',
+                type:'addtoList',
                 load:{Title,Year,Poster,imdbID},
             })
             
