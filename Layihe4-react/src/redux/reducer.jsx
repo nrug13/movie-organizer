@@ -54,7 +54,7 @@ function reducer(state = obj, action) {
                 favourite: x
 
             }
-
+        
         default:
             return state;
     }

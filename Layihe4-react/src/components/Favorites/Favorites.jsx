@@ -6,7 +6,7 @@ function Favorites() {
     let { favourite: list } = useSelector(function (a) {
         return a;
     })
-    let arr = [];
+
     let dispatch = useDispatch()
     function ItemDeleteHandler(imdbID) {
         dispatch({
@@ -15,17 +15,30 @@ function Favorites() {
         })
 
     }
-    // function Ee(){
-    //     list.map(function(element,index){
-    //         return(
-    //             <li key={index}>
-                    
-    //                 {element.Title}
-    //             </li>
-                
-    //         )
-    //     })
+    // let arr = []
+    // function aa() {
+    //     list.forEach(element => {
+    //         arr.push(element.Title)
+    //     });
+    //     console.log(arr)
     // }
+    // console.log(arr)
+    // function Ee() {
+        
+    //     return (
+    //         <div>
+    //             filmler{
+    //             <ul className="movies">
+    //         {arr.length>0? arr.map((movie) => (
+    //             <li className="movies__item" key={movie.imdbID}>
+    //                 {movie.Title}
+    //             </li>
+    //         )): false}
+    //     </ul>
+    //         }</div>
+    //     );
+    // }
+
 
 
     return (
@@ -41,15 +54,15 @@ function Favorites() {
             <label htmlFor="">
                 <input type="text" />
                 <button type='button'
-                // onClick={
-                //     ee
-                // }
-                
+                    // onClick={
+                    //     aa
+                    // }
+
                 >Siyahı yarat
                     
                 </button>
-                <br />
-                <br />
+                {/* <Ee /> */}
+                
             </label>
 
         </div>
