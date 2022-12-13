@@ -15,35 +15,18 @@ function Favorites() {
         })
 
     }
-    // let arr = []
-    // function aa() {
-    //     list.forEach(element => {
-    //         arr.push(element.Title)
-    //     });
-    //     console.log(arr)
-    // }
-    // console.log(arr)
-    // function Ee() {
-        
-    //     return (
-    //         <div>
-    //             filmler{
-    //             <ul className="movies">
-    //         {arr.length>0? arr.map((movie) => (
-    //             <li className="movies__item" key={movie.imdbID}>
-    //                 {movie.Title}
-    //             </li>
-    //         )): false}
-    //     </ul>
-    //         }</div>
-    //     );
-    // }
-
+    function savetoList(id){
+        dispatch({
+            type:'savetoList',
+            load:id,Title
+        })
+    }
+    
 
 
     return (
         <div className="favorites">
-            Əlavə edilmiş elementlərin sayı : {list.length}
+            Filmlərin sayı : {list.length}
             <ul className="favorites__list">
                 {list.map((item, index) => {
                     return <li className='list-item' key={index}>{item.Title} ({item.Year})
@@ -54,14 +37,11 @@ function Favorites() {
             <label htmlFor="">
                 <input type="text" />
                 <button type='button'
-                    // onClick={
-                    //     aa
-                    // }
-
+                    onClick={savetoList}
                 >Siyahı yarat
                     
                 </button>
-                {/* <Ee /> */}
+                
                 
             </label>
 

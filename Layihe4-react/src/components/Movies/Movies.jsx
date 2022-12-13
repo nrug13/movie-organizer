@@ -12,7 +12,7 @@ function Movies() {
                 <li className="movies__item" key={movie.imdbID}>
                     <MovieItem {...movie} />
                 </li>
-            )): "Axtardığınız nəticəyə uyğun heçnə tapılmadı"}
+            )): "Belə film yoxdur"}
         </ul>
     );
 

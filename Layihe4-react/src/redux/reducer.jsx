@@ -1,8 +1,9 @@
 const obj = {
     data: [],
     favourite: [],
-    tolist:[],
-    inputVal: ''
+    saveList:[],
+    inputVal: '',
+    nameofList: "",
 }
 function reducer(state = obj, action) {
     switch (action.type) {
@@ -54,7 +55,16 @@ function reducer(state = obj, action) {
                 favourite: x
 
             }
-        
+        // case 'savetoList':{
+        //     return state = {
+        //         ...state,
+        //         saveList: [favourite,...state.saveList,action.load]
+        //     }
+        // }
+        // case "addtoList":
+        //     return state = {...state, nameofList: action.value}
+        // case "createList":
+        //     return state = {...state, nameofList: "", list: [...state.list, action.load], favourite: []}
         default:
             return state;
     }
